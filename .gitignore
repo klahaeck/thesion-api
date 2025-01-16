@@ -3,6 +3,7 @@
 *.pem
 dist
 uploads/**/*
+data/**/*
 
 # dependencies
 /node_modules
