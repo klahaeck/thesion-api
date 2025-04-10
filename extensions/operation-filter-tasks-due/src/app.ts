@@ -15,10 +15,10 @@ export default defineOperationApp({
 		{
 			field: 'sources',
 			name: 'Sources',
-			type: 'string',
+			type: 'json',
 			meta: {
 				width: 'full',
-				interface: 'list',
+				interface: 'input-json',
 			},
 		},
 	],

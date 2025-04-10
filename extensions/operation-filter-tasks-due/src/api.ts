@@ -13,7 +13,8 @@ export default defineOperationApi<Options>({
 
 		const dueToRun = sources.filter(source => {
 			try {
-				const interval = cronParser.parse(source.crawl_frequency, { currentDate: source.last_crawled });
+				const lastCrawled = source.last_crawled ? source.last_crawled : new Date(0);
+				const interval = cronParser.parse(source.crawl_frequency, { currentDate: lastCrawled });
 				const nextRun = interval.next();
 	
 				return now.isSameOrAfter(nextRun.toDate());
